@@ -1,0 +1,29 @@
+providers:
+  - provider: api
+    id: tds-api
+    config:
+      url: http://localhost:8000/api/
+      method: POST
+      headers:
+        Content-Type: application/json
+      input_key: question
+      output_key: answer
+
+tests:
+  - name: PCA Test
+    prompt: What is PCA in data science?
+    assert:
+      - type: includes
+        value: Principal Component Analysis
+
+  - name: StandardScaler Use
+    prompt: Why is StandardScaler used before PCA?
+
+  - name: Difference between PCA and SVD
+    prompt: What is the difference between PCA and SVD?
+
+  - name: Role of Eigenvectors in PCA
+    prompt: What role do eigenvectors play in PCA?
+
+  - name: Dimensionality reduction
+    prompt: How does PCA help in dimensionality reduction?
